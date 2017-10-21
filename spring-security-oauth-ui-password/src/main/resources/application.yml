@@ -1,0 +1,13 @@
+server:
+    port: 8084
+zuul:
+  routes:
+    oauth:
+      path: /oauth/**
+      url: https://idcs-f087640c013849af926368aeb4bc0d49.identity.oraclecloud.com/oauth2/v1
+  Servlet30WrapperFilter:
+    pre:
+      disable:true
+idcs:
+  clientId: a4e8f68b36b5409981a4629045a90d47
+  clientSecret: 23d19072-602f-4535-b106-2d39221ebf67

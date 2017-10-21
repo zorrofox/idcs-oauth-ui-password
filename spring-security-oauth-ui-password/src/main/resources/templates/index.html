@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Spring Security OAuth</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+</head>
+<body ng-app="myApp" ng-controller="mainCtrl">
+
+<div th:include="header"></div>
+
+<div class="container">
+<h1 class="col-sm-12">用户详细信息</h1>
+<div class="col-sm-12">
+	<label class="col-sm-3">ID</label>
+	<span>{{user.sub}}</span>
+</div>
+
+<div class="col-sm-12">
+<label class="col-sm-3">姓名</label>
+<span>{{user.user_displayname}}</span>
+</div>
+
+<pre>{{user | json}}</pre>
+
+<div class="col-sm-12">
+<br/>
+<br/>
+<a class="btn btn-info" href="#" ng-click="refreshAccessToken()">Refresh Access Token</a>
+<br/>
+<br/>
+<a class="btn btn-info" href="#" ng-click="logout()" ng-if="isLoggedIn">Logout</a>
+</div>
+</div>
+</body>
+</html>
